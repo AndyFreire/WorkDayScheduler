@@ -33,16 +33,22 @@ $(document).ready(function(){
             break;
         }
 
+        var id = timesArr[i].format('HH');
+        var task = localStorage.getItem(id) || "";
+
         //Set the html for the timeblock
-        timeblock.html("<div class='time-block'> <div class='row'> <div class='col-2 hour'> <p>" + timesArr[i].format('hh A') + "</p> </div> <textarea class='col-8 " + relativeTime + " description'> </textarea> <button class='col-2 saveBtn'> <i class='fas fa-save'></i></button> </div> </div>");
-        
+        timeblock.html("<div class='time-block' id ='" + id + "'> <div class='row'> <div class='col-2 hour'> <p>" + timesArr[i].format('hh A') + "</p> </div> <textarea class='col-8 " + relativeTime + " description' id = 'text-"+ id +"'>" + task + "</textarea> <button class='col-2 saveBtn'> <i class='fas fa-save'></i></button> </div> </div>");
+
         //Append the timeblock to the container
         $(".container").append(timeblock);
     }
 
     $(".saveBtn").on("click", function(){
 
-        console.log("save button pressed")
+        var containerID = $(this).parent().parent().attr('id');
+        var textAreaID = "#text-" + containerID;
+
+        localStorage.setItem(containerID, $(textAreaID).val());
 
     });
 
