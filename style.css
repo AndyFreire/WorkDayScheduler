@@ -44,17 +44,17 @@ textarea{
 
 .past {
   background-color: #d3d3d3;
-  color: black;
+  color: rgb(36, 36, 36);
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 
 .saveBtn {

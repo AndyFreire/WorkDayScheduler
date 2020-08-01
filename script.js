@@ -53,12 +53,4 @@ $(document).ready(function(){
     });
 
 
-
-
-    console.log(timesArr);
-
-    
-
-
-
 });
